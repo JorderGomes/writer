@@ -4,7 +4,7 @@ import re
 
 # https://www.youtube.com/watch?v=kkHJce9-oLE&pp=ygUMYXJpc3TDs3RlbGVz
 
-def download_mp3(url, output_path="ignored-files/audio/"):
+def download_mp3(url, output_path="assets/audio/"):
     ydl_opts = {
         'format': 'bestaudio/best',
         'outtmpl': output_path + '%(title)s.%(ext)s',

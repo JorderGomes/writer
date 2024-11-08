@@ -11,9 +11,9 @@ def delete_all_files_in_folder(folder_path):
             print(f"Error removing {file_path}: {e}")
 
 # Use o caminho da pasta que deseja limpar
-folder_audio_path = 'ignored-files/audio'
-folder_texts_path = 'ignored-files/texts'
-folder_chunk_path = 'ignored-files/audio_chunks'
+folder_audio_path = 'assets/audio'
+folder_texts_path = 'assets/texts'
+folder_chunk_path = 'assets/audio_chunks'
 
 delete_all_files_in_folder(folder_audio_path)
 delete_all_files_in_folder(folder_texts_path)

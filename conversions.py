@@ -10,7 +10,7 @@ def get_name(path):
 def mp3towav(path):
     src = path
     name = get_name(path)
-    name = "ignored-files/audio/"+name+".wav"
+    name = "assets/audio/"+name+".wav"
     sound = AudioSegment.from_mp3(src)
     sound.export(name, format="wav")
     file_audio = sr.AudioFile(name)  
@@ -18,5 +18,5 @@ def mp3towav(path):
 def convert(file_path):
     mp3towav(file_path)
 
-file_path = "ignored-files/audio/grandespensadoresaristteles.mp3"
+file_path = "assets/audio/grandespensadoresaristteles.mp3"
 convert(file_path)

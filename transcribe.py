@@ -3,7 +3,7 @@ import os
 from pydub import AudioSegment
 from pydub.utils import make_chunks
 
-path = "ignored-files/audio/grandespensadoresaristteles.wav"
+path = "assets/audio/grandespensadoresaristteles.wav"
 
 def silence_based_conversion(path):
     # Define o nome do arquivo de saída com base no nome do arquivo de entrada
@@ -15,7 +15,7 @@ def silence_based_conversion(path):
     chunk_length_ms = 60000
     chunks = make_chunks(sound, chunk_length_ms)
     
-    os.chdir('ignored-files/texts')
+    os.chdir('assets/texts')
     fh = open(file_rec_name, "w+")
     os.chdir('../')
     
