@@ -27,11 +27,11 @@ def rename_file(original_file_path):
     formatted_file_path = os.path.join(os.path.dirname(original_file_path), f"{formatted_title}.mp3")
 
     os.rename(original_file_path, formatted_file_path)
-    return formatted_title
+    return "assets/audio/" + formatted_title + ".mp3"
 
 # Uso das funções
-url = input("Escreva a URL do vídeo: \n>> ")
-original_title, output_path, original_file_path = download_mp3(url)
-formatted_title = rename_file(original_file_path)
+# url = input("Escreva a URL do vídeo: \n>> ")
+# original_title, output_path, original_file_path = download_mp3(url)
+# formatted_title = rename_file(original_file_path)
 
-print(f"{original_title} has been successfully downloaded as {formatted_title}.")
+# print(f"{original_title} has been successfully downloaded as {formatted_title}.")

@@ -14,9 +14,10 @@ def mp3towav(path):
     sound = AudioSegment.from_mp3(src)
     sound.export(name, format="wav")
     file_audio = sr.AudioFile(name)  
+    return name
 
 def convert(file_path):
-    mp3towav(file_path)
+    return mp3towav(file_path)
 
-file_path = "assets/audio/grandespensadoresaristteles.mp3"
-convert(file_path)
+# file_path = "assets/audio/grandespensadoresaristteles.mp3"
+# convert(file_path)
