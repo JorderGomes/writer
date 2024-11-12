@@ -1,5 +1,3 @@
-ignored-files
-assets/*
 __pycache__
 venv
 .env
