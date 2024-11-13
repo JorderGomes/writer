@@ -2,9 +2,8 @@ import yt_dlp
 import os
 import re
 
-# https://www.youtube.com/watch?v=kkHJce9-oLE&pp=ygUMYXJpc3TDs3RlbGVz
 
-def download_mp3(url, output_path="assets/audio/"):
+def download_mp3(url, output_path="../assets/audio/"):
     ydl_opts = {
         'format': 'bestaudio/best',
         'outtmpl': output_path + '%(title)s.%(ext)s',
@@ -27,11 +26,4 @@ def rename_file(original_file_path):
     formatted_file_path = os.path.join(os.path.dirname(original_file_path), f"{formatted_title}.mp3")
 
     os.rename(original_file_path, formatted_file_path)
-    return "assets/audio/" + formatted_title + ".mp3"
-
-# Uso das funções
-# url = input("Escreva a URL do vídeo: \n>> ")
-# original_title, output_path, original_file_path = download_mp3(url)
-# formatted_title = rename_file(original_file_path)
-
-# print(f"{original_title} has been successfully downloaded as {formatted_title}.")
+    return "../assets/audio/" + formatted_title + ".mp3"

@@ -3,19 +3,16 @@ import os
 from pydub import AudioSegment
 from pydub.utils import make_chunks
 
-# path = "assets/audio/grandespensadoresaristteles.wav"
 
 def silence_based_conversion(path):
-    # Define o nome do arquivo de saída com base no nome do arquivo de entrada
     video_name = path.split("/")[-1]
     file_rec_name = video_name.split(".")[0]+"_rec.txt"
     
-    # Carrega o áudio e o divide em fragmentos de 60 segundos
     sound = AudioSegment.from_wav(path)
     chunk_length_ms = 60000
     chunks = make_chunks(sound, chunk_length_ms)
     
-    os.chdir('assets/texts')
+    os.chdir('../assets/texts')
     fh = open(file_rec_name, "w+")
     os.chdir('../')
     
@@ -28,7 +25,6 @@ def silence_based_conversion(path):
     text = ""
 
     for i, chunk in enumerate(chunks):
-        # Exporta cada fragmento como arquivo WAV
         chunk.export(f"./chunk{i}.wav", format="wav")
         filename = f'chunk{i}.wav'
         
@@ -38,7 +34,7 @@ def silence_based_conversion(path):
             try:
                 rec = r.recognize_google(audio_listened, language="pt-BR")
                 text = text + rec
-                fh.write(rec + ". \n")  # Grava a transcrição
+                fh.write(rec + ". \n")  
             except sr.UnknownValueError:
                 print("Could not understand audio")
             except sr.RequestError as e:
@@ -46,5 +42,3 @@ def silence_based_conversion(path):
     
     os.chdir('../../')
     return text
-
-# silence_based_conversion(path)

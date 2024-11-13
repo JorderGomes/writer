@@ -10,17 +10,10 @@ def delete_all_files_in_folder(folder_path):
         except Exception as e:
             print(f"Error removing {file_path}: {e}")
 
-def delete():
-    folder_audio_path = 'assets/audio'
-    folder_chunk_path = 'assets/audio_chunks'
-
-    delete_all_files_in_folder(folder_audio_path)
-    delete_all_files_in_folder(folder_chunk_path)
-
 def delete_all():
-    folder_audio_path = 'assets/audio'
-    folder_chunk_path = 'assets/audio_chunks'
-    folder_texts_path = 'assets/texts'
+    folder_audio_path = '../assets/audio'
+    folder_chunk_path = '../assets/audio_chunks'
+    folder_texts_path = '../assets/texts'
 
     delete_all_files_in_folder(folder_audio_path)
     delete_all_files_in_folder(folder_chunk_path)
