@@ -12,7 +12,9 @@ def silence_based_conversion(path):
     chunk_length_ms = 60000
     chunks = make_chunks(sound, chunk_length_ms)
     
-    os.chdir('../assets/texts')
+    print(os.getcwd())
+
+    os.chdir('assets/texts')
     fh = open(file_rec_name, "w+")
     os.chdir('../')
     

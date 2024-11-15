@@ -3,7 +3,7 @@ import os
 import re
 
 
-def download_mp3(url, output_path="../assets/audio/"):
+def download_mp3(url, output_path="assets/audio/"):
     ydl_opts = {
         'format': 'bestaudio/best',
         'outtmpl': output_path + '%(title)s.%(ext)s',
@@ -26,4 +26,4 @@ def rename_file(original_file_path):
     formatted_file_path = os.path.join(os.path.dirname(original_file_path), f"{formatted_title}.mp3")
 
     os.rename(original_file_path, formatted_file_path)
-    return "../assets/audio/" + formatted_title + ".mp3"
+    return "assets/audio/" + formatted_title + ".mp3"

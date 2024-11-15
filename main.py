@@ -16,7 +16,7 @@ key = os.getenv('API_KEY')
 @app.route('/summarize-video', methods=['POST'])
 def summarize_video():
     # baixar áudio e formata título recebendo o novo título
-    link = request.get_json()
+    link = request.get_json().link
     original_title, output_path, original_file_path = download.download_mp3(link)
     formatted_title = download.rename_file(original_file_path)
     
@@ -29,7 +29,7 @@ def summarize_video():
     # pedir resumo para IA
     gemni.configure(api_key=key)
     model = gemni.GenerativeModel('gemini-1.5-pro-latest')
-    prompt = "Por favor resuma este texto e faça o possível para completar as lacunas e dar sentido ao resumo: \n\n"
+    prompt = "Por favor resuma este texto e faça o possível para completar as lacunas e dar sentido ao resumo, não faça comentários apenas resuma e corrija as lacunas: \n\n"
     response = model.generate_content(prompt + transcription).text
 
     # apagar arquivos
