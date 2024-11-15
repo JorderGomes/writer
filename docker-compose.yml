@@ -1,0 +1,10 @@
+version: "3.8"
+services:
+  writer:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: writer-back
+    container_name: writer-web
+    ports:
+      - "5000:80"
