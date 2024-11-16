@@ -11,7 +11,11 @@ app = Flask(__name__)
 load_dotenv()
 key = os.getenv('API_KEY')
 
-
+@app.route('/alive', methods=['GET'])
+def alive():
+	return {
+		'message':'writer api is live'
+	}
 
 @app.route('/summarize-video', methods=['POST'])
 def summarize_video():
