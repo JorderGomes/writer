@@ -20,7 +20,8 @@ def alive():
 @app.route('/summarize-video', methods=['POST'])
 def summarize_video():
     # baixar áudio e formata título recebendo o novo título
-    link = request.get_json().link
+    print(request.get_json()['link'])
+    link = request.get_json()['link']
     original_title, output_path, original_file_path = download.download_mp3(link)
     formatted_title = download.rename_file(original_file_path)
     
