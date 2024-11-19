@@ -1,6 +1,7 @@
 assets/texts/*
 assets/audio/*
 assets/audio_chunks/*
+assets/uploads/*
 __pycache__
 venv
 .env
