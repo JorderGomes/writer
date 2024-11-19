@@ -4,7 +4,9 @@ cachetools==5.5.0
 certifi==2024.8.30
 charset-normalizer==3.4.0
 click==8.1.7
+ffmpeg-python==0.2.0
 Flask==3.0.3
+future==1.0.0
 google-ai-generativelanguage==0.6.10
 google-api-core==2.22.0
 google-api-python-client==2.151.0
@@ -30,6 +32,8 @@ pydantic_core==2.23.4
 pydub==0.25.1
 pyparsing==3.2.0
 python-dotenv==1.0.1
+pytube==15.0.0
+pytubefix==8.5.1
 requests==2.32.3
 rsa==4.9
 SpeechRecognition==3.11.0
