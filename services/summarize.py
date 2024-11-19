@@ -2,8 +2,8 @@
 import pytubefix
 import speech_recognition as sr
 import subprocess
-import transcribe
-import delete_files
+import services.transcribe as transcribe
+import services.delete_files as delete_files
 import google.generativeai as gemni
 from dotenv import load_dotenv
 import os
@@ -16,7 +16,9 @@ def transcribe_video(url):
     yt = pytubefix.YouTube(url)
     audio = yt.streams.filter(only_audio=True).first()
     output = "audio.mp4"  # Nome do arquivo de saída
-    os.chdir("../assets/audio")
+    
+    os.chdir("assets/audio")
+    
     audio.download(filename=output)
     output = f"{output}.m4a"
     output_file = "audio.wav"
@@ -38,4 +40,4 @@ def transcribe_video(url):
     print(response)
     return response
 
-transcribe_video("https://www.youtube.com/watch?v=kkHJce9-oLE&pp=ygUMYXJpc3TDs3RlbGVz")
+# transcribe_video("https://www.youtube.com/watch?v=kkHJce9-oLE&pp=ygUMYXJpc3TDs3RlbGVz")
